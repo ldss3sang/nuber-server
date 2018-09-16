@@ -17,10 +17,12 @@
     "graphql-to-typescript": "^0.1.2",
     "nodemon": "^1.18.4",
     "ts-node": "^7.0.1",
+    "tslint": "^5.11.0",
     "tslint-config-prettier": "^1.15.0",
     "typescript": "^3.0.3"
   },
   "scripts": {
+    "predev": "yarn run types",
     "dev": "cd src && nodemon --exec ts-node index.ts -e ts,graphql",
     "pretypes": "gql-merge --out-file ./src/schema.graphql ./src/api/**/*.graphql",
     "types": "graphql-to-typescript ./src/schema.graphql ./src/types/graph.d.ts"
